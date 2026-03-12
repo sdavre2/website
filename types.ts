@@ -3,6 +3,7 @@ export interface ServiceItem {
   title: string;
   description: string;
   iconName: string;
+  features?: string[];
 }
 
 export interface Testimonial {

@@ -1,8 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, Send, X, Loader2, Sparkles, User, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { sendMessageToGemini } from '../services/geminiService';
+import { GoogleGenAI } from "@google/genai";
 import { ChatMessage, LoadingState } from '../types';
+
+const SYSTEM_INSTRUCTION = `
+You are the "Cloud Smart Assistant", a helpful and knowledgeable AI agent for the company "Cloud Smart Service".
+Your goal is to assist potential clients by answering questions about cloud computing, digital transformation, AI integration, and DevOps.
+Keep your answers professional, concise, and business-oriented. 
+If asked about services, mention: 
+- Oracle E-Business Suite (EBS) Support
+- Database Management (MSSQL, MySQL, PostgreSQL)
+- Public Cloud Migration (AWS, Azure, GCP)
+- AI Solutions & Cybersecurity
+- Managed DevOps
+
+Do not make up pricing, but encourage users to use the contact form for quotes.
+`;
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +56,19 @@ const ChatWidget: React.FC = () => {
     setLoadingState(LoadingState.LOADING);
 
     try {
-      const responseText = await sendMessageToGemini(userMessage.text);
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.API_KEY || "" });
+      const model = 'gemini-3.1-pro-preview';
+      
+      const response = await ai.models.generateContent({
+        model: model,
+        contents: userMessage.text,
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
+          temperature: 0.7,
+        }
+      });
+
+      const responseText = response.text || "I'm sorry, I couldn't generate a response at this moment.";
       
       const botMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),

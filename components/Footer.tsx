@@ -13,27 +13,27 @@ const Footer: React.FC = () => {
               <span className="font-bold text-xl">Cloud Smart</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Accelerating digital transformation with intelligent cloud strategies and next-gen technology.
+              Accelerating digital transformation with intelligent cloud strategies, Oracle expertise, and next-gen database management.
             </p>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-blue-400 transition-colors">About</a></li>
+              <li><a href="#about" className="hover:text-blue-400 transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-blue-400 transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-blue-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Cloud Migration</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">AI Solutions</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">DevOps</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition-colors">Security</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">Oracle EBS Support</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">DB Management (SQL/Postgres)</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">Cloud Migration</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">DevOps & Security</a></li>
             </ul>
           </div>
 

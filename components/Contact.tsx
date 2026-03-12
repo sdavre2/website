@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-50">
+    <section id="contact" className="py-20 bg-slate-50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900">Email Us</h4>
-                  <p className="text-slate-600">hello@cloudsmartservice.com</p>
+                  <p className="text-slate-600">support@cloudsmartservice.com</p>
                 </div>
               </div>
               
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900">Call Us</h4>
-                  <p className="text-slate-600">+1 (555) 123-4567</p>
+                  <p className="text-slate-600">+1 (440) 840-7719</p>
                 </div>
               </div>
               
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900">Visit Us</h4>
-                  <p className="text-slate-600">100 Innovation Dr,<br/>Tech Valley, CA 94043</p>
+                  <p className="text-slate-600">10532 Herrington Dr,<br/>Aurora, OH 44202</p>
                 </div>
               </div>
             </div>
